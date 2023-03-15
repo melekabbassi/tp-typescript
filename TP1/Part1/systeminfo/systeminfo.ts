@@ -12,7 +12,7 @@ let freeMemMB = freeMemkB / 1024;
 let data = "System Information: " + homeDir + " " + cpuArch + " " + osType + " " + freeMemkB + "kB " + freeMemMB + "MB";
 
 try {
-    fs.writeFileSync("./TP1/systeminfo/os.info", data);
+    fs.writeFileSync("./os.info", data);
 } catch (error) {
     console.log("Error: " + error);
 }
