@@ -25,22 +25,29 @@ console.log("experience: " + employee.experience);
 console.log("********************************************");
 var employees = [
     { firstName: "John", lastName: "Doe", department: "IT", experience: 5 },
-    { firstName: "Jane", lastName: "Doe", department: "IT", experience: 3 },
+    { firstName: "Jane", lastName: "Doe", department: "IT", experience: 7 },
     { firstName: "John", lastName: "Smith", department: "IT", experience: 2 }
 ];
-// Affichez l'employee avec la plus grande expérience
+// Affichez l'employee avec la plus grande expérience si il y en a 2 qui ont la même expérience, affichez les deux
 var maxExperience = 0;
-var maxExperienceEmployee;
+var maxExperienceEmployee = [];
 for (var index = 0; index < employees.length; index++) {
     if (employees[index].experience > maxExperience) {
         maxExperience = employees[index].experience;
-        maxExperienceEmployee = employees[index];
-        console.log("maxExperienceEmployee: " + maxExperienceEmployee.firstName + " " + maxExperienceEmployee.lastName);
+        maxExperienceEmployee = [];
+        maxExperienceEmployee.push(employees[index]);
     }
+    else if (employees[index].experience == maxExperience) {
+        maxExperienceEmployee.push(employees[index]);
+    }
+}
+for (var index = 0; index < maxExperienceEmployee.length; index++) {
+    console.log(maxExperienceEmployee[index].firstName + " " + maxExperienceEmployee[index].lastName);
 }
 console.log("********************************************");
 var Employee_1 = require("./Employee");
-var manager = new Employee_1.Manager(6);
+var manager1 = new Employee_1.Manager(6);
+var manager2 = new Employee_1.Manager(20);
 function Verify(manager) {
     if (manager.noSubordonnées >= 15) {
         console.log("noSubordonnes " + manager.noSubordonnées + " is greater than 15");
@@ -49,4 +56,5 @@ function Verify(manager) {
         console.log("noSubordonnes " + manager.noSubordonnées + " is less than 15");
     }
 }
-Verify(manager);
+Verify(manager1);
+Verify(manager2);

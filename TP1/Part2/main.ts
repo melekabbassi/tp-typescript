@@ -39,26 +39,33 @@ console.log("********************************************");
 
 let employees: Employee[] = [
     { firstName: "John", lastName: "Doe", department: "IT", experience: 5 },
-    { firstName: "Jane", lastName: "Doe", department: "IT", experience: 3 },
+    { firstName: "Jane", lastName: "Doe", department: "IT", experience: 7 },
     { firstName: "John", lastName: "Smith", department: "IT", experience: 2 }
 ];
 
-// Affichez l'employee avec la plus grande expérience
+// Affichez l'employee avec la plus grande expérience si il y en a 2 qui ont la même expérience, affichez les deux
 let maxExperience = 0;
-let maxExperienceEmployee: Employee;
+let maxExperienceEmployee: Employee[] = [];
 for (let index = 0; index < employees.length; index++) {
     if (employees[index].experience > maxExperience) {
         maxExperience = employees[index].experience;
-        maxExperienceEmployee = employees[index];
-        console.log("maxExperienceEmployee: " + maxExperienceEmployee.firstName + " " + maxExperienceEmployee.lastName);
+        maxExperienceEmployee = [];
+        maxExperienceEmployee.push(employees[index]);
+    } else if (employees[index].experience == maxExperience) {
+        maxExperienceEmployee.push(employees[index]);
     }
+}
+
+for(let index = 0; index < maxExperienceEmployee.length; index++){
+    console.log(maxExperienceEmployee[index].firstName + " " + maxExperienceEmployee[index].lastName);
 }
 
 console.log("********************************************");
 
 import { Manager } from "./Employee";
 
-const manager = new Manager(6);
+const manager1 = new Manager(6);
+const manager2 = new Manager(20);
 
 function Verify(manager: Manager) {
     if (manager.noSubordonnées >= 15){
@@ -68,7 +75,8 @@ function Verify(manager: Manager) {
     }
 }
 
-Verify(manager)
+Verify(manager1)
+Verify(manager2)
 
 
 
