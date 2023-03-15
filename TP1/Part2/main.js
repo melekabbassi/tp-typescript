@@ -40,7 +40,7 @@ for (var index = 0; index < employees.length; index++) {
 }
 console.log("********************************************");
 var Employee_1 = require("./Employee");
-var manager = new Employee_1.Manager(80);
+var manager = new Employee_1.Manager(6);
 function Verify(manager) {
     if (manager.noSubordonnées >= 15) {
         console.log("noSubordonnes " + manager.noSubordonnées + " is greater than 15");

@@ -21,7 +21,7 @@ console.log("number of combinations: " + comb(10, 5));
 
 console.log("********************************************");
 
-type EmployeeType = {
+type Employee = {
     firstName: string;
     lastName: string;
     department: string;
@@ -37,7 +37,7 @@ console.log("experience: " + employee.experience);
 
 console.log("********************************************");
 
-let employees: EmployeeType[] = [
+let employees: Employee[] = [
     { firstName: "John", lastName: "Doe", department: "IT", experience: 5 },
     { firstName: "Jane", lastName: "Doe", department: "IT", experience: 3 },
     { firstName: "John", lastName: "Smith", department: "IT", experience: 2 }
@@ -45,7 +45,7 @@ let employees: EmployeeType[] = [
 
 // Affichez l'employee avec la plus grande expérience
 let maxExperience = 0;
-let maxExperienceEmployee: EmployeeType;
+let maxExperienceEmployee: Employee;
 for (let index = 0; index < employees.length; index++) {
     if (employees[index].experience > maxExperience) {
         maxExperience = employees[index].experience;
@@ -56,7 +56,6 @@ for (let index = 0; index < employees.length; index++) {
 
 console.log("********************************************");
 
-import { Employee } from "./Employee";
 import { Manager } from "./Employee";
 
 const manager = new Manager(6);
