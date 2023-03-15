@@ -44,12 +44,6 @@ while (i116 <= 2030) {
 
 console.log("********************************************");
 
-/*
-Stockez un nombre N quelconque dans une variable. Utilisez la boucle while pour
-compter seulement ses diviseurs impairs. Affichez sur l’écran :
-a. “Le nombre N à y diviseurs”, où y le numéro de ses diviseurs
-b. Si le nombre est premier.
-*/
 let N = 7;
 let diviseurs = 0;
 let i = 1;
